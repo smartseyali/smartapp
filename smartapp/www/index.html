@@ -1,0 +1,50 @@
+{% extends "templates/web.html" %}
+
+{% block page_content %}
+<!-- Hero Section -->
+<section class="hero bg-light py-5 text-center">
+  <div class="container">
+    <h1>Welcome to Smart Solutions</h1>
+    <p class="lead">We deliver Business Intelligence, ERP Dashboards, and Subscription Products</p>
+    <a href="/signup" class="btn btn-primary btn-lg">Get Started</a>
+  </div>
+</section>
+
+<!-- Products Section -->
+<section class="products py-5">
+  <div class="container text-center">
+    <h2>Our Products</h2>
+    <div class="row mt-4">
+      <div class="col-md-4">
+        <div class="icon-box p-4 border rounded">
+          <i class="fa fa-chart-line fa-3x mb-3"></i>
+          <h4>Analytics</h4>
+          <p>Interactive dashboards for real-time decision making.</p>
+        </div>
+      </div>
+      <div class="col-md-4">
+        <div class="icon-box p-4 border rounded">
+          <i class="fa fa-cogs fa-3x mb-3"></i>
+          <h4>ERP Solutions</h4>
+          <p>End-to-end ERP solutions tailored for your business.</p>
+        </div>
+      </div>
+      <div class="col-md-4">
+        <div class="icon-box p-4 border rounded">
+          <i class="fa fa-cloud fa-3x mb-3"></i>
+          <h4>Cloud Services</h4>
+          <p>Secure and scalable cloud-based solutions.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Services Section -->
+<section class="services bg-light py-5">
+  <div class="container text-center">
+    <h2>Our Services</h2>
+    <p>We provide implementation, support, and customization of ERP systems and business intelligence tools.</p>
+  </div>
+</section>
+{% endblock %}

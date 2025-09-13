@@ -1,0 +1,46 @@
+{% extends "templates/web.html" %}
+
+{% block page_content %}
+<section class="subscriptions py-5">
+  <div class="container text-center">
+    <h2>Choose Your Plan</h2>
+    <div class="row mt-4">
+      <div class="col-md-4">
+        <div class="card shadow p-4">
+          <h3>Free</h3>
+          <p class="lead">₹0 / month</p>
+          <ul class="list-unstyled">
+            <li>Basic features</li>
+            <li>Community support</li>
+          </ul>
+          <button class="btn btn-outline-primary w-100">Select</button>
+        </div>
+      </div>
+      <div class="col-md-4">
+        <div class="card shadow p-4">
+          <h3>Monthly</h3>
+          <p class="lead">₹499 / month</p>
+          <ul class="list-unstyled">
+            <li>All Free features</li>
+            <li>Email support</li>
+            <li>More storage</li>
+          </ul>
+          <button class="btn btn-success w-100">Subscribe</button>
+        </div>
+      </div>
+      <div class="col-md-4">
+        <div class="card shadow p-4">
+          <h3>Yearly</h3>
+          <p class="lead">₹4999 / year</p>
+          <ul class="list-unstyled">
+            <li>All Monthly features</li>
+            <li>Priority support</li>
+            <li>1-on-1 onboarding</li>
+          </ul>
+          <button class="btn btn-warning w-100">Subscribe</button>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+{% endblock %}

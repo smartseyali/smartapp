@@ -1,0 +1,48 @@
+{% extends "templates/web.html" %}
+
+{% block page_content %}
+<section class="signup py-5">
+  <div class="container">
+    <div class="row justify-content-center">
+      <div class="col-md-6">
+        <div class="card shadow p-4">
+          <h2 class="mb-4 text-center">Create Your Account</h2>
+          <form id="signup-form">
+            <div class="mb-3">
+              <label>Email</label>
+              <input type="email" name="email" class="form-control" required>
+            </div>
+            <div class="mb-3">
+              <label>Password</label>
+              <input type="password" name="password" class="form-control" required>
+            </div>
+            <button type="submit" class="btn btn-success w-100">Sign Up</button>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<script>
+frappe.ready(function() {
+  $("#signup-form").on("submit", function(e) {
+    e.preventDefault();
+    frappe.call({
+      method: "mywebsite.www.signup.create_user",
+      args: {
+        email: $("input[name='email']").val(),
+        password: $("input[name='password']").val()
+      },
+      callback: function(r) {
+        if (r.message.status === "success") {
+          window.location.href = "/login";
+        } else {
+          frappe.msgprint(r.message.message);
+        }
+      }
+    });
+  });
+});
+</script>
+{% endblock %}
