@@ -1,0 +1,26 @@
+name: Deploy Frappe App
+
+on:
+  push:
+    branches:
+      - main # Or your main branch name
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+
+      - name: Deploy to DigitalOcean Droplet
+        uses: appleboy/ssh-action@master
+        with:
+          host: ${{ secrets.SSH_HOST }}
+          username: ${{ secrets.SSH_USERNAME }}
+          key: ${{ secrets.SSH_KEY }}
+          script: |
+            cd /path/to/your/frappe-bench # Replace with your actual Frappe Bench path
+            bench --site your_site_name.com pull-app your_app_name # Replace with your site and app name
+            bench --site your_site_name.com migrate
+            bench build --app your_app_name
+            bench restart
