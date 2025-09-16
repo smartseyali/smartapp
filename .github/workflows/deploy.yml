@@ -19,8 +19,8 @@ jobs:
           username: ${{ secrets.SSH_USERNAME }}
           key: ${{ secrets.SSH_KEY }}
           script: |
-            cd /path/to/your/frappe-bench # Replace with your actual Frappe Bench path
-            bench --site your_site_name.com pull-app your_app_name # Replace with your site and app name
-            bench --site your_site_name.com migrate
-            bench build --app your_app_name
+            cd frappe-bench-v14 # Replace with your actual Frappe Bench path
+            bench --site dev.app pull-app smartapp # Replace with your site and app name
+            bench --site dev.app migrate
+            bench build --app smartapp
             bench restart
